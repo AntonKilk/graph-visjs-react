@@ -36,7 +36,7 @@ function App() {
     physics: {
       enabled: true,
       hierarchicalRepulsion: {
-          nodeDistance: 200,
+          nodeDistance: 350,
          // avoidOverlap: 1
          // springLength: 100
       }
@@ -44,10 +44,15 @@ function App() {
 
     nodes: {
       font : {
-            size : 16,
+            size : 26,
             color : 'black'
       },
+      shape: "box",
+      shapeProperties: {
+        borderRadius: 12
+      }
     },
+
     edges: {
       color: "green",
       smooth: {
