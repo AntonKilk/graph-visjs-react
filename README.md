@@ -1,3 +1,9 @@
+### Concept map of programming courses for [paqmind](https://en.paqmind.com/)
+
+Used [vis.js](https://visjs.org/) network and [its React component](https://www.npmjs.com/package/vis-react).
+
+
+---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

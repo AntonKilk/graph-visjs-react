@@ -1,10 +1,8 @@
 import React from 'react'
 import Graph from "react-graph-vis";
 import data from './courses'
-//import "./styles.css";
-// need to import the vis network css in order to show tooltip
-//import "./network.css";
 
+// import data from courses.json file
 let nodes = data.nodes
 nodes.forEach( node => {
   node.label = node.name
@@ -16,23 +14,25 @@ edges.forEach( link => {
   link.to = link.target
 })
 
+// map functionality
 function App() {
   const graph = {
     nodes: nodes,
     edges: edges
   };
 
+  // hierarchical layout chosen
   const options = {
     layout: {
       hierarchical: {
       enabled:true,
       levelSeparation: 300,
       //nodeSpacing: 180,
-      direction: "UD",
+      direction: "DU", //direction from down to up
       edgeMinimization: false,
-      // parentCentralization: false,
       }
     },
+    // forces applied
     physics: {
       enabled: true,
       hierarchicalRepulsion: {
@@ -54,12 +54,23 @@ function App() {
     },
 
     edges: {
-      color: "green",
+      color: {
+        color: "#D3D3D3",
+        highlight: "#797979",
+        hover: "#797979",
+        opacity: 1.0
+      },
       smooth: {
-        type: "curvedCCW",
-        roundness: 0.3
+        type: "curvedCW",
+        roundness: 0.3,
         },
+      arrows: {
+        to: {
+          scaleFactor: 2
+        }
+      },
     },
+
     groups: {
       "0": {
         color: '#6FFFF3',
@@ -76,6 +87,17 @@ function App() {
     },
 
     height: "600px",
+
+    // Interaction module enables "hover", "select", "zoom" and "drag" options
+    interaction: {
+      hover: true,
+      hoverConnectedEdges: true,
+      hoverEdges: true,
+      selectable: true,
+      selectConnectedEdges: true,
+      zoomView: true,
+      dragView: true
+    }
   };
 
   const events = {
