@@ -1,4 +1,4 @@
-### Concept map of programming courses for [paqmind](https://en.paqmind.com/)
+### Concept map of programming courses for [paqmind](https://en.paqmind.com/) learning platform
 
 Used [vis.js](https://visjs.org/) network and [its React component](https://www.npmjs.com/package/vis-react).
 
