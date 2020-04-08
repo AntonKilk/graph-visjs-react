@@ -26,9 +26,9 @@ function App() {
     layout: {
       hierarchical: {
       enabled:true,
-      levelSeparation: 300,
+      levelSeparation: 500,
       //nodeSpacing: 180,
-      direction: "DU", //direction from down to up
+      direction: "LR", //direction from left to right
       edgeMinimization: false,
       }
     },
@@ -92,7 +92,6 @@ function App() {
     interaction: {
       hover: true,
       hoverConnectedEdges: true,
-      hoverEdges: true,
       selectable: true,
       selectConnectedEdges: true,
       zoomView: true,
