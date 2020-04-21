@@ -10,5 +10,3 @@ Used [vis.js](https://visjs.org/) network and [its React component](https://www.
 ---
 
 ![Vertical option](https://github.com/AntonKilk/graph-visjs-react/blob/master/public/img/vertical.png)
-
-![Horizontal version](https://github.com/AntonKilk/graph-visjs-react/blob/master/public/img/horizontal.png)
