@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './DownUp'
-//import DownUp from './Leftright'
+//import App from './DownUp'
+import App from './Leftright'
+import "./styles.css";
 
 
 ReactDOM.render(

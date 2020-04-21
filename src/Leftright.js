@@ -1,3 +1,26 @@
+// Changes on 21.04.20:
+// Make vertical gradient background: 
+  //ok. See styles.css
+// Make nodes same color: 
+  //ok. Done in groups. Can't be done in nodes 
+// Make edges direct: 
+  //edges.smooth.type: "continuous"
+// Increase padding: 
+  //nodes.margin: 50
+  //nodes.font.size: 100
+// Increase distance between levels: 
+  //layout.levelSeparation: 2000
+
+// Highlight only incoming edges:
+  // can't separate in options.interaction
+// Enlarge nodes on click
+  //
+// Make edges less visible, more transparent
+  //
+// Make nodes less visible, when clicking on one
+  //
+
+
 import React from 'react'
 import Graph from "react-graph-vis";
 import data from './courses'
@@ -26,7 +49,7 @@ function App() {
     layout: {
       hierarchical: {
       enabled:true,
-      levelSeparation: 500,
+      levelSeparation: 2000,
       //nodeSpacing: 180,
       direction: "LR", //direction from left to right
       edgeMinimization: false,
@@ -44,13 +67,14 @@ function App() {
 
     nodes: {
       font : {
-            size : 26,
+            size : 100,
             color : 'black'
       },
       shape: "box",
       shapeProperties: {
         borderRadius: 12
-      }
+      },
+      margin: 50
     },
 
     edges: {
@@ -61,28 +85,29 @@ function App() {
         opacity: 1.0
       },
       smooth: {
-        type: "curvedCW",
-        roundness: 0.3,
+        type: "continuous",
+        roundness: 0
         },
       arrows: {
         to: {
-          scaleFactor: 2
+          scaleFactor: 5
         }
       },
     },
 
+
     groups: {
       "0": {
-        color: '#6FFFF3',
+        color: '#DCFCFA',
       },
      "1": {
-        color: '#6FFFC2',
+        color: '#DCFCFA',
       },
       "2": {
-        color: '#F3FF15',
+        color: '#DCFCFA',
       },
       "3": {
-        color: '#E17319',
+        color: '#DCFCFA',
       },
     },
 
@@ -112,7 +137,10 @@ function App() {
       events={events}
       getNetwork={network => {
         //  if you want access to vis.js network api you can set the state in a parent component using this propert
-
+        network.on("hoverNode", function(){
+          // functionality for popup to show on mouseover
+          (console.log("make all other nodes invisible"))
+        });
       }}
     />
   );

@@ -1,0 +1,9 @@
+#root {
+    background-image: linear-gradient(
+        to right,
+        #90F76D, 
+        #F4F76D 35%,
+        #FAE3B8 65%, 
+        #FAB8B8 90%
+        );
+}
